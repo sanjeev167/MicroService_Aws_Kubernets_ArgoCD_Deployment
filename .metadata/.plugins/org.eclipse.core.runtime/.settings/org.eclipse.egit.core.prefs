@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=F\:\\MicroserviceWithKubernetAndArgoCD_7_7_2026\\msimpl-gitops\\.git;F\:\\MicroserviceWithKubernetAndArgoCD_7_7_2026\\MicroServiceWithKubernetsAndArgoCD\\.git;
-GitRepositoriesView.GitDirectories.relative=F\:\\MicroserviceWithKubernetAndArgoCD_7_7_2026\\msimpl-gitops\\.git;.git;
+GitRepositoriesView.GitDirectories=F\:\\MicroserviceArgoCD_AWS_17_7_2026\\MicroService_Aws_Kubernets_ArgoCD_Deployment\\.git;
+GitRepositoriesView.GitDirectories.relative=.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1
