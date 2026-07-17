@@ -1,0 +1,118 @@
+2026-07-17 23:13:02,787 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2026-07-17 23:13:53,264 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pon:ms-auth-server:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-auth-server\pom.xml.
+2026-07-17 23:13:54,353 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pon:ms-config-server:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-config-server\pom.xml.
+2026-07-17 23:13:54,969 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pon:ms-discovery-server:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-discovery-server\pom.xml.
+2026-07-17 23:13:55,669 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pon:ms-gateway:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-gateway\pom.xml.
+2026-07-17 23:13:56,157 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pon:ms-notification:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-notification\pom.xml.
+2026-07-17 23:13:57,105 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.orchestrator:ms-transaction-orchestrator:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-transaction-orchestrator\pom.xml.
+2026-07-17 23:13:57,660 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pon:ms-user:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-user\pom.xml.
+2026-07-17 23:13:58,395 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pon:ms-wallet:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-wallet\pom.xml.
+2026-07-17 23:14:03,882 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-gateway/src/main/java
+2026-07-17 23:14:03,886 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-gateway/src/main/resources
+2026-07-17 23:14:03,888 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-gateway/src/main/resources
+2026-07-17 23:14:03,890 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-gateway/src/test/java
+2026-07-17 23:14:03,893 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-gateway/src/test/resources
+2026-07-17 23:14:06,257 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-user/src/main/java
+2026-07-17 23:14:06,259 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-user/src/main/resources
+2026-07-17 23:14:06,260 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-user/src/main/resources
+2026-07-17 23:14:06,262 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-user/src/test/java
+2026-07-17 23:14:06,263 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-user/src/test/resources
+2026-07-17 23:14:06,865 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-config-server/src/main/java
+2026-07-17 23:14:06,867 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-config-server/src/main/resources
+2026-07-17 23:14:06,868 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-config-server/src/main/resources
+2026-07-17 23:14:06,869 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-config-server/src/test/java
+2026-07-17 23:14:06,871 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-config-server/src/test/resources
+2026-07-17 23:14:07,517 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-notification/src/main/java
+2026-07-17 23:14:07,518 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-notification/src/main/resources
+2026-07-17 23:14:07,520 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-notification/src/main/resources
+2026-07-17 23:14:07,522 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-notification/src/test/java
+2026-07-17 23:14:07,524 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-notification/src/test/resources
+2026-07-17 23:14:08,518 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-wallet/src/main/java
+2026-07-17 23:14:08,519 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-wallet/src/main/resources
+2026-07-17 23:14:08,521 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-wallet/src/main/resources
+2026-07-17 23:14:08,522 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-wallet/src/test/java
+2026-07-17 23:14:08,524 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-wallet/src/test/resources
+2026-07-17 23:14:09,459 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-auth-server/src/main/java
+2026-07-17 23:14:09,464 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-auth-server/src/main/resources
+2026-07-17 23:14:09,465 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-auth-server/src/main/resources
+2026-07-17 23:14:09,467 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-auth-server/src/test/java
+2026-07-17 23:14:09,469 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-auth-server/src/test/resources
+2026-07-17 23:14:10,529 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-transaction-orchestrator/src/main/java
+2026-07-17 23:14:10,531 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-transaction-orchestrator/src/main/resources
+2026-07-17 23:14:10,536 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-transaction-orchestrator/src/main/resources
+2026-07-17 23:14:10,537 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-transaction-orchestrator/src/test/java
+2026-07-17 23:14:10,538 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-transaction-orchestrator/src/test/resources
+2026-07-17 23:14:11,550 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-discovery-server/src/main/java
+2026-07-17 23:14:11,551 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-discovery-server/src/main/resources
+2026-07-17 23:14:11,552 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-discovery-server/src/main/resources
+2026-07-17 23:14:11,554 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-discovery-server/src/test/java
+2026-07-17 23:14:11,555 [Worker-6: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-discovery-server/src/test/resources
+2026-07-17 23:14:12,404 [Worker-6: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 8 project(s) in 31 sec
+2026-07-17 23:14:14,076 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2026-07-17 23:14:20,214 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pon:ms-auth-server:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-auth-server\pom.xml.
+2026-07-17 23:14:21,103 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pon:ms-config-server:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-config-server\pom.xml.
+2026-07-17 23:14:21,709 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pon:ms-discovery-server:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-discovery-server\pom.xml.
+2026-07-17 23:14:22,285 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pon:ms-notification:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-notification\pom.xml.
+2026-07-17 23:14:22,955 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.orchestrator:ms-transaction-orchestrator:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-transaction-orchestrator\pom.xml.
+2026-07-17 23:14:23,246 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pon:ms-user:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-user\pom.xml.
+2026-07-17 23:14:23,822 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.pon:ms-wallet:0.0.1-SNAPSHOT @ F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-wallet\pom.xml.
+2026-07-17 23:14:28,537 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-auth-server/src/main/java
+2026-07-17 23:14:28,542 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-auth-server/src/main/resources
+2026-07-17 23:14:28,544 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-auth-server/src/main/resources
+2026-07-17 23:14:28,545 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-auth-server/src/test/java
+2026-07-17 23:14:28,547 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-auth-server/src/test/resources
+2026-07-17 23:14:29,220 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-config-server/src/main/java
+2026-07-17 23:14:29,221 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-config-server/src/main/resources
+2026-07-17 23:14:29,223 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-config-server/src/main/resources
+2026-07-17 23:14:29,224 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-config-server/src/test/java
+2026-07-17 23:14:29,225 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-config-server/src/test/resources
+2026-07-17 23:14:29,734 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-discovery-server/src/main/java
+2026-07-17 23:14:29,735 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-discovery-server/src/main/resources
+2026-07-17 23:14:29,737 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-discovery-server/src/main/resources
+2026-07-17 23:14:29,738 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-discovery-server/src/test/java
+2026-07-17 23:14:29,739 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-discovery-server/src/test/resources
+2026-07-17 23:14:30,388 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-notification/src/main/java
+2026-07-17 23:14:30,389 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-notification/src/main/resources
+2026-07-17 23:14:30,390 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-notification/src/main/resources
+2026-07-17 23:14:30,391 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-notification/src/test/java
+2026-07-17 23:14:30,393 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-notification/src/test/resources
+2026-07-17 23:14:31,090 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-transaction-orchestrator/src/main/java
+2026-07-17 23:14:31,091 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-transaction-orchestrator/src/main/resources
+2026-07-17 23:14:31,092 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-transaction-orchestrator/src/main/resources
+2026-07-17 23:14:31,093 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-transaction-orchestrator/src/test/java
+2026-07-17 23:14:31,094 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-transaction-orchestrator/src/test/resources
+2026-07-17 23:14:31,876 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-user/src/main/java
+2026-07-17 23:14:31,877 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-user/src/main/resources
+2026-07-17 23:14:31,879 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-user/src/main/resources
+2026-07-17 23:14:31,880 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-user/src/test/java
+2026-07-17 23:14:31,881 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-user/src/test/resources
+2026-07-17 23:14:32,534 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-wallet/src/main/java
+2026-07-17 23:14:32,535 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-wallet/src/main/resources
+2026-07-17 23:14:32,537 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-wallet/src/main/resources
+2026-07-17 23:14:32,537 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ms-wallet/src/test/java
+2026-07-17 23:14:32,538 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ms-wallet/src/test/resources
+2026-07-17 23:14:34,213 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 7 poms: local refresh takes 0.00 sec, refresh facades takes 13.00 sec, update config takes 4.00 sec 
+2026-07-17 23:14:35,225 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-07-17 23:14:35,287 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-07-17 23:14:35,296 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-auth-server\src\test\resources
+2026-07-17 23:14:37,447 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-07-17 23:14:37,487 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-07-17 23:14:37,494 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-config-server\src\test\resources
+2026-07-17 23:14:38,062 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-07-17 23:14:38,100 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-07-17 23:14:38,107 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-discovery-server\src\test\resources
+2026-07-17 23:14:38,801 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-07-17 23:14:38,838 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-07-17 23:14:38,845 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-gateway\src\test\resources
+2026-07-17 23:14:40,993 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources from src\main\resources to target\classes
+2026-07-17 23:14:41,091 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2026-07-17 23:14:41,102 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-notification\src\test\resources
+2026-07-17 23:14:43,904 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources from src\main\resources to target\classes
+2026-07-17 23:14:44,194 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2026-07-17 23:14:44,202 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-transaction-orchestrator\src\test\resources
+2026-07-17 23:14:44,704 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-07-17 23:14:44,733 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-07-17 23:14:44,739 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-user\src\test\resources
+2026-07-17 23:14:46,587 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources from src\main\resources to target\classes
+2026-07-17 23:14:46,645 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2026-07-17 23:14:46,654 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory F:\MicroserviceArgoCD_AWS_17_7_2026\MicroService_Aws_Kubernets_ArgoCD_Deployment\ms-wallet\src\test\resources
