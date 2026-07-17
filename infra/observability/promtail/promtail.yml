@@ -1,0 +1,92 @@
+# =============================================================================
+# Promtail Configuration
+# =============================================================================
+# File        : promtail-config.yml
+# Project     : MSIMPL - Microservices Platform
+# Purpose     : Collect application logs and forward them to Loki
+# Environment : Docker Desktop + Kind Kubernetes
+# Version     : 2.0.0
+# =============================================================================
+#
+# Notes
+# -----
+# - Promtail runs in Docker Desktop.
+# - Spring Boot microservices run in the local Kubernetes cluster.
+# - Application logs are written to the shared host logs directory.
+# - Logs are pushed to Loki and visualized through Grafana.
+#
+# =============================================================================
+
+
+# =============================================================================
+# Server Configuration
+# =============================================================================
+
+server:
+  http_listen_port: 9080
+
+
+# =============================================================================
+# Position Tracking
+# =============================================================================
+#
+# Stores the last processed position for each log file.
+#
+# =============================================================================
+
+positions:
+  filename: /tmp/positions.yaml
+
+
+# =============================================================================
+# Loki Client
+# =============================================================================
+#
+# Sends collected logs to the Loki container through the
+# shared Docker network.
+#
+# =============================================================================
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+
+# =============================================================================
+# Log Scraping
+# =============================================================================
+
+scrape_configs:
+
+  - job_name: spring-boot-logs
+
+    static_configs:
+
+      - targets:
+          - localhost
+
+        labels:
+          job: msimpl
+          env: kubernetes
+          type: application
+
+          __path__: /var/log/app/*.log
+
+
+    # =========================================================================
+    # Pipeline Stages
+    # =========================================================================
+
+    pipeline_stages:
+
+      # Extract service name from log filename.
+      #
+      # Example:
+      #   ms-wallet.log
+      #        ↓
+      #   service=ms-wallet
+      #
+      - regex:
+          expression: '.*/(?P<service>[^/]+)\.log'
+
+      - labels:
+          service:

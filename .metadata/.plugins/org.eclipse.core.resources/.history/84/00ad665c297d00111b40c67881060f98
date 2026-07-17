@@ -1,0 +1,158 @@
+# =============================================================================
+# Argo CD Application Manifest
+# =============================================================================
+# File        : ms-transaction-orchestrator-application.yaml
+# Project     : MSIMPL - Microservices Platform
+# Environment : Development (Dev)
+# Application : ms-transaction-orchestrator
+# Namespace   : argocd
+# Resource    : Argo CD Application
+#
+# Purpose
+# -----------------------------------------------------------------------------
+# Defines the Argo CD Application Custom Resource (CR) responsible for
+# deploying the Transaction Orchestrator microservice using the GitOps model.
+#
+# Description
+# -----------------------------------------------------------------------------
+# This Application instructs Argo CD to:
+#
+#   • Monitor the GitOps repository.
+#   • Track the specified Git branch.
+#   • Load the Development environment manifests through Kustomize.
+#   • Deploy the application into the target Kubernetes cluster.
+#   • Continuously compare the desired state stored in Git with the
+#     running state inside Kubernetes.
+#
+# GitOps Flow
+# -----------------------------------------------------------------------------
+#
+# Developer
+#      │
+#      ▼
+# Git Push
+#      │
+#      ▼
+# GitHub Actions
+#      │
+#      ▼
+# Docker Hub
+#      │
+#      ▼
+# GitHub Actions updates deployment.yaml
+#      │
+#      ▼
+# GitOps Repository
+#      │
+#      ▼
+# Argo CD detects Git change
+#      │
+#      ▼
+# Kubernetes Cluster
+#      │
+#      ▼
+# Rolling Deployment
+#
+# Notes
+# -----------------------------------------------------------------------------
+# • This file defines only the Argo CD Application resource.
+#
+# • All Kubernetes manifests for this microservice are maintained under:
+#
+#       kubernetes/environments/dev/ms-transaction-orchestrator
+#
+# • The target directory contains a Kustomization manifest that assembles
+#   all Kubernetes resources required to deploy the Transaction Orchestrator
+#   microservice in the Development environment.
+#
+# • Module 4 uses Manual Synchronization.
+#
+# • Module 5 enables:
+#       - Automated Synchronization
+#       - Self-Healing
+#       - Automatic Pruning
+#
+# Compatible With
+# -----------------------------------------------------------------------------
+# - Argo CD 2.x+
+# - Kustomize
+# - Docker Desktop Kubernetes
+# - Kind
+# - Amazon EKS
+#
+# Version     : 2.0.0 (LOCKED)
+# Author      : Sanjeev Kumar
+# =============================================================================
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+
+  # ---------------------------------------------------------------------------
+  # Name displayed in the Argo CD UI.
+  # ---------------------------------------------------------------------------
+  name: ms-transaction-orchestrator
+
+  # ---------------------------------------------------------------------------
+  # Namespace where the Argo CD Application CR is stored.
+  #
+  # NOTE:
+  # This is NOT the namespace where the microservice is deployed.
+  # ---------------------------------------------------------------------------
+  namespace: argocd
+
+spec:
+
+  # ---------------------------------------------------------------------------
+  # Argo CD Project.
+  #
+  # Applications are logically grouped into Projects.
+  # The default project is used during development.
+  # ---------------------------------------------------------------------------
+  project: default
+
+  source:
+
+    # -------------------------------------------------------------------------
+    # GitOps repository containing Kubernetes manifests.
+    # -------------------------------------------------------------------------
+    repoURL: https://github.com/sanjeev167/msimpl-gitops.git
+
+    # -------------------------------------------------------------------------
+    # Git branch monitored by Argo CD.
+    # -------------------------------------------------------------------------
+    targetRevision: main
+
+    # -------------------------------------------------------------------------
+    # Development environment Kustomize directory.
+    # -------------------------------------------------------------------------
+    path: kubernetes/environments/dev/ms-transaction-orchestrator
+
+  destination:
+
+    # -------------------------------------------------------------------------
+    # Deploy to the Kubernetes cluster where Argo CD is running.
+    # -------------------------------------------------------------------------
+    server: https://kubernetes.default.svc
+
+    # -------------------------------------------------------------------------
+    # Target namespace for the Transaction Orchestrator microservice.
+    #
+    # This namespace is created by the Infrastructure Application and is also
+    # referenced by the Development environment Kustomization.
+    # -------------------------------------------------------------------------
+    namespace: msimpl
+
+  # ---------------------------------------------------------------------------
+  # Synchronization Policy
+  #
+  # Module 4
+  #   • Manual Synchronization
+  #
+  # Module 5
+  #   • Automated Synchronization
+  #   • Self-Heal
+  #   • Automatic Pruning
+  # ---------------------------------------------------------------------------
+  # syncPolicy: {}

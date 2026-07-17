@@ -1,0 +1,123 @@
+# =============================================================================
+# Kubernetes ConfigMap Manifest
+# =============================================================================
+# File        : config-map-kafka.yaml
+# Project     : MSIMPL - Microservices Platform
+# Service     : ms-transaction-orchestrator
+# Namespace   : msimpl
+# Resource    : ConfigMap
+# Purpose     : Stores non-sensitive Apache Kafka configuration specific to the
+#               Transaction Orchestrator microservice.
+#
+# Description
+# -----------------------------------------------------------------------------
+# This ConfigMap contains Kafka configuration consumed only by the
+# Transaction Orchestrator microservice.
+#
+# Typical configuration includes:
+#
+#   • Kafka bootstrap server
+#   • Consumer defaults
+#   • Producer defaults
+#   • Retry configuration
+#
+# Service-specific Kafka settings such as:
+#
+#   • Topic names
+#   • Consumer groups
+#   • Function bindings
+#   • Serialization configuration
+#
+# are configured within the Transaction Orchestrator microservice and may
+# reference these environment variables.
+#
+# Sensitive information such as:
+#
+#   • SASL Username
+#   • SASL Password
+#   • SSL Certificates
+#
+# must NEVER be stored here.
+#
+# GitOps Notes
+# -----------------------------------------------------------------------------
+# - This manifest is maintained in the MSIMPL GitOps repository.
+# - Argo CD continuously reconciles this ConfigMap with Git.
+# - Any Kafka configuration change should be committed to Git.
+# - Changes automatically propagate to newly created Pods.
+#
+# Compatible With
+# -----------------------------------------------------------------------------
+# - Apache Kafka
+# - Local Kubernetes (Docker Desktop / Kind)
+# - GitHub Actions
+# - Argo CD
+# - Amazon EKS
+#
+# Version     : 2.0.0 (LOCKED)
+# Author      : Sanjeev Kumar
+# =============================================================================
+
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+
+  # ---------------------------------------------------------------------------
+  # ConfigMap Name
+  #
+  # Referenced by Deployment:
+  #
+  # envFrom:
+  #   configMapRef:
+  #     name: ms-transaction-kafka-config
+  # ---------------------------------------------------------------------------
+  name: ms-transaction-kafka-config
+
+  namespace: msimpl
+
+  labels:
+
+    app.kubernetes.io/name: ms-transaction-orchestrator
+    app.kubernetes.io/component: kafka-config
+    app.kubernetes.io/part-of: msimpl-platform
+
+data:
+
+  # ---------------------------------------------------------------------------
+  # Kafka Bootstrap Server
+  #
+  # Local Development
+  # -----------------
+  # host.docker.internal resolves to the host machine from inside Docker.
+  #
+  # Production
+  # ----------
+  # Replace with the Kafka bootstrap service or external broker address.
+  # ---------------------------------------------------------------------------
+
+  KAFKA_HOST: "host.docker.internal"
+
+  KAFKA_PORT: "9092"
+
+  # ---------------------------------------------------------------------------
+  # Consumer Configuration
+  #
+  # Default Kafka consumer settings used by the
+  # Transaction Orchestrator microservice.
+  # ---------------------------------------------------------------------------
+
+  KAFKA_AUTO_OFFSET_RESET: "earliest"
+
+  KAFKA_ENABLE_AUTO_COMMIT: "false"
+
+  # ---------------------------------------------------------------------------
+  # Producer Configuration
+  #
+  # Default Kafka producer settings used by the
+  # Transaction Orchestrator microservice.
+  # ---------------------------------------------------------------------------
+
+  KAFKA_ACKS: "all"
+
+  KAFKA_RETRIES: "3"

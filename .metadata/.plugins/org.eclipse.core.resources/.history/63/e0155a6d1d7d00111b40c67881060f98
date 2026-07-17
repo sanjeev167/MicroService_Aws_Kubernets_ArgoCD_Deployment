@@ -1,0 +1,124 @@
+# =============================================================================
+# Kubernetes Namespace Manifest
+# =============================================================================
+# File        : namespace.yaml
+# Project     : MSIMPL - Microservices Platform
+# Environment : Development (Dev)
+# Module      : Infrastructure
+# Resource    : Namespace
+#
+# Purpose
+# -----------------------------------------------------------------------------
+# Creates the shared Kubernetes namespace used by all MSIMPL microservices
+# deployed in the Development environment.
+#
+#
+# Description
+# -----------------------------------------------------------------------------
+# A Kubernetes Namespace provides logical isolation for application resources
+# within a cluster.
+#
+# The Development namespace is created only once and is shared by all
+# MSIMPL microservices, including:
+#
+#   • ms-wallet
+#   • ms-notification
+#   • ms-transaction-orchestrator
+#
+# All namespaced Kubernetes resources are deployed into this namespace,
+# including:
+#
+#   • Deployments
+#   • Services
+#   • ConfigMaps
+#   • Secrets
+#   • Ingresses
+#   • Persistent Volume Claims
+#
+# Application-specific resources are deployed by their respective Argo CD
+# Applications, while this Namespace is managed exclusively by the
+# Development Infrastructure Application.
+#
+#
+# GitOps Architecture
+# -----------------------------------------------------------------------------
+#
+# Developer
+#      │
+#      ▼
+# Git Push
+#      │
+#      ▼
+# GitHub Actions
+#      │
+#      ▼
+# GitOps Repository
+#      │
+#      ▼
+# Argo CD Bootstrap Application
+#      │
+#      ▼
+# Infrastructure Application
+#      │
+#      ▼
+# namespace.yaml
+#      │
+#      ▼
+# Namespace : msimpl
+#      │
+#      ├──────────────► ms-wallet
+#      ├──────────────► ms-notification
+#      └──────────────► ms-transaction-orchestrator
+#
+#
+# GitOps Notes
+# -----------------------------------------------------------------------------
+# - This Namespace is managed exclusively by the Infrastructure
+#   Argo CD Application.
+#
+# - No individual microservice owns this Namespace.
+#
+# - Each microservice deploys its resources into this Namespace through
+#   Kustomize using:
+#
+#       namespace: msimpl
+#
+# - This design prevents multiple Argo CD Applications from attempting to
+#   reconcile the same Namespace resource, eliminating OutOfSync conflicts.
+#
+# - If the Namespace already exists, Kubernetes simply reconciles the
+#   desired state.
+#
+#
+# Compatible With
+# -----------------------------------------------------------------------------
+# - Docker Desktop Kubernetes
+# - Kind
+# - Amazon EKS
+# - GitHub Actions
+# - Argo CD
+#
+#
+# Version     : 4.0.0 (LOCKED)
+# Author      : Sanjeev Kumar
+# =============================================================================
+
+apiVersion: v1
+kind: Namespace
+
+metadata:
+
+  # ---------------------------------------------------------------------------
+  # Namespace Name
+  #
+  # Shared namespace used by all MSIMPL microservices in the
+  # Development environment.
+  # ---------------------------------------------------------------------------
+  name: msimpl
+
+  labels:
+
+    app.kubernetes.io/name: msimpl
+    app.kubernetes.io/component: infrastructure
+    app.kubernetes.io/part-of: msimpl-platform
+    app.kubernetes.io/environment: dev

@@ -1,0 +1,14 @@
+name: Wallet_Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Welcome Message
+        run: echo "Wallet_Workflow! My first Wallet_Workflow GitHub Action is running successfully."

@@ -1,0 +1,63 @@
+# =============================================================================
+# Prometheus Configuration
+# =============================================================================
+# File        : prometheus.yml
+# Project     : MSIMPL - Microservices Platform
+# Purpose     : Collect metrics from Kubernetes-deployed microservices
+# Environment : Docker Desktop + Kind Kubernetes
+# Version     : 2.0.0
+# =============================================================================
+#
+# Notes
+# -----
+# - Prometheus runs in Docker Desktop.
+# - Spring Boot microservices run in the local Kubernetes cluster.
+# - Metrics are collected through Kubernetes Service endpoints.
+#
+# =============================================================================
+
+global:
+
+  # Metrics collection interval
+  scrape_interval: 5s
+
+
+scrape_configs:
+
+  # ===========================================================================
+  # Wallet Service
+  # ===========================================================================
+
+  - job_name: 'ms-wallet'
+
+    metrics_path: '/actuator/prometheus'
+
+    static_configs:
+      - targets:
+          - 'ms-wallet-service:8080'
+
+
+  # ===========================================================================
+  # Notification Service
+  # ===========================================================================
+
+  - job_name: 'ms-notification'
+
+    metrics_path: '/actuator/prometheus'
+
+    static_configs:
+      - targets:
+          - 'ms-notification-service:8081'
+
+
+  # ===========================================================================
+  # Transaction Orchestrator Service
+  # ===========================================================================
+
+  - job_name: 'ms-transaction-orchestrator'
+
+    metrics_path: '/actuator/prometheus'
+
+    static_configs:
+      - targets:
+          - 'ms-transaction-orchestrator-service:8082'

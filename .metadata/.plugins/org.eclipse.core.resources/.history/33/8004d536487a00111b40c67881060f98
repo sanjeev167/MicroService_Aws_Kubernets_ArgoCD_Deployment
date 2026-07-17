@@ -1,0 +1,68 @@
+# =============================================================================
+# GitHub Actions - Continuous Integration (CI)
+# =============================================================================
+# File        : ms-wallet-ci.yml
+# Project     : MSIMPL - Microservices Platform
+# Service     : ms-wallet
+# Purpose     : Verify GitHub Actions workflow and checkout the repository.
+# Environment : GitHub Actions
+# Version     : 1.1.0
+# =============================================================================
+#
+# Phase
+# -----
+# CI - Repository Checkout
+#
+# This workflow verifies:
+# - GitHub Actions execution.
+# - Repository checkout on the GitHub runner.
+#
+# Future phases will extend this workflow to:
+# - Configure JDK
+# - Cache Maven dependencies
+# - Build the application
+# - Run tests
+# - Build Docker image
+# - Push image to Docker Hub
+#
+# =============================================================================
+
+name: Wallet CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  workflow-verification:
+
+    name: Verify GitHub Actions
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # --------------------------------------------------------
+      # Step 1
+      # Checkout Repository
+      # --------------------------------------------------------
+
+      - name: Checkout Repository
+
+        uses: actions/checkout@v4
+
+      # --------------------------------------------------------
+      # Step 2
+      # Display Welcome Message
+      # --------------------------------------------------------
+
+      - name: Display Welcome Message
+
+        run: |
+          echo "===================================================="
+          echo "MSIMPL - GitHub Actions"
+          echo "Service : ms-wallet"
+          echo "Status  : Repository checkout successful."
+          echo "===================================================="

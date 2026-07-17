@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: ms-wallet
+  namespace: argocd
+
+spec:
+
+  project: default
+
+  source:
+    repoURL: https://github.com/sanjeev167/msimpl-gitops.git
+    targetRevision: main
+    path: kubernetes/applications/ms-wallet
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: msimpl
+
+  syncPolicy: {}

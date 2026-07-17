@@ -1,0 +1,107 @@
+# =============================================================================
+# Docker Compose - Kafka Infrastructure
+# =============================================================================
+# File        : docker-compose.yml
+# Project     : MSIMPL - Microservices Platform
+# Purpose     : Starts the shared Kafka infrastructure for local Kubernetes
+#               development.
+# Environment : Docker Desktop + Kind Kubernetes
+# Version     : 1.1.0
+# =============================================================================
+#
+# Components
+# ----------
+# - Apache Kafka (KRaft)
+# - Kafka UI
+#
+# Notes
+# -----
+# - Kafka runs in Docker Desktop.
+# - Spring Boot microservices run in the local Kubernetes cluster.
+# - Kafka runtime configuration is externalized in env/kafka.env.
+#
+# =============================================================================
+
+version: "3.8"
+
+services:
+
+  # ===========================================================================
+  # Apache Kafka (KRaft)
+  # ===========================================================================
+  #
+  # Shared messaging infrastructure for MSIMPL microservices.
+  # Runtime configuration is loaded from env/kafka.env.
+  #
+  # ===========================================================================
+
+  kafka:
+
+    image: confluentinc/cp-kafka:7.5.0
+
+    container_name: kafka
+
+    hostname: kafka
+
+    ports:
+      - "9092:9092"
+
+    env_file:
+      - ./env/kafka.env
+
+    networks:
+      - infra_msimpl-network
+
+    restart: unless-stopped
+
+
+  # ===========================================================================
+  # Kafka UI
+  # ===========================================================================
+  #
+  # Web interface for Kafka administration.
+  # Connects to Kafka through the internal Docker network.
+  #
+  # ===========================================================================
+
+  kafka-ui:
+
+    image: provectuslabs/kafka-ui
+
+    container_name: kafka-ui
+
+    hostname: kafka-ui
+
+    ports:
+      - "8085:8080"
+
+    environment:
+
+      KAFKA_CLUSTERS_0_NAME: Local
+
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+
+    depends_on:
+      - kafka
+
+    networks:
+      - infra_msimpl-network
+
+    restart: unless-stopped
+
+
+# =============================================================================
+# Docker Network
+# =============================================================================
+#
+# Shared bridge network for Docker infrastructure containers.
+#
+# =============================================================================
+
+networks:
+
+  infra_msimpl-network:
+
+    name: infra_msimpl-network
+
+    driver: bridge

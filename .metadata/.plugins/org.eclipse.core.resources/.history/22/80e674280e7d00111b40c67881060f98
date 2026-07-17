@@ -1,0 +1,130 @@
+# =============================================================================
+# Kubernetes ConfigMap Manifest
+# =============================================================================
+# File        : config-map-kafka.yaml
+# Project     : MSIMPL - Microservices Platform
+# Environment : Development (Dev)
+# Service     : ms-wallet
+# Resource    : ConfigMap
+#
+# Purpose
+# -----------------------------------------------------------------------------
+# Stores environment-specific, non-sensitive Apache Kafka configuration for the
+# Wallet microservice used in the Development environment.
+#
+# Description
+# -----------------------------------------------------------------------------
+# This ConfigMap contains Kafka connection and default client configuration
+# consumed by the Wallet microservice.
+#
+# Typical configuration includes:
+#
+#   • Kafka Bootstrap Host
+#   • Kafka Bootstrap Port
+#   • Consumer Defaults
+#   • Producer Defaults
+#   • Retry Configuration
+#
+# Service-specific Kafka configuration such as:
+#
+#   • Topic Names
+#   • Consumer Groups
+#   • Function Bindings
+#   • Serialization Configuration
+#
+# remains inside the Wallet application and references these environment
+# variables where required.
+#
+# This ConfigMap must NEVER contain:
+#
+#   • SASL Username
+#   • SASL Password
+#   • SSL Certificates
+#   • Authentication Tokens
+#
+# Sensitive information must be stored in Kubernetes Secrets.
+#
+# GitOps Notes
+# -----------------------------------------------------------------------------
+# - This ConfigMap belongs to the Development environment.
+# - Argo CD continuously reconciles this resource with the desired
+#   state stored in Git.
+# - Never edit this ConfigMap directly inside the Kubernetes cluster.
+#   All changes must originate from Git.
+#
+# Compatible With
+# -----------------------------------------------------------------------------
+# - Apache Kafka
+# - Docker Desktop Kubernetes
+# - Kind
+# - Amazon EKS
+# - GitHub Actions
+# - Argo CD
+#
+# Version     : 3.0.0 (LOCKED)
+# Author      : Sanjeev Kumar
+# =============================================================================
+
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+
+  # ---------------------------------------------------------------------------
+  # ConfigMap Name
+  #
+  # Referenced by:
+  #
+  # Deployment
+  #   envFrom:
+  #     configMapRef:
+  #       name: ms-wallet-kafka-config
+  # ---------------------------------------------------------------------------
+  name: ms-wallet-kafka-config
+
+  labels:
+
+    app.kubernetes.io/name: ms-wallet
+    app.kubernetes.io/component: kafka-config
+    app.kubernetes.io/part-of: msimpl-platform
+    
+
+data:
+
+  # ---------------------------------------------------------------------------
+  # Kafka Bootstrap Host
+  #
+  # Development
+  # -----------
+  # host.docker.internal resolves to the Docker Desktop host where Kafka
+  # is currently running.
+  #
+  # QA / UAT / Production
+  # ---------------------
+  # Replace with the Kafka bootstrap service or broker address for the
+  # respective environment.
+  # ---------------------------------------------------------------------------
+  KAFKA_HOST: "host.docker.internal"
+
+  # ---------------------------------------------------------------------------
+  # Kafka Bootstrap Port
+  # ---------------------------------------------------------------------------
+  KAFKA_PORT: "9092"
+
+  # ---------------------------------------------------------------------------
+  # Consumer Configuration
+  #
+  # Default Kafka consumer behaviour.
+  # ---------------------------------------------------------------------------
+  KAFKA_AUTO_OFFSET_RESET: "earliest"
+
+  KAFKA_ENABLE_AUTO_COMMIT: "false"
+
+  # ---------------------------------------------------------------------------
+  # Producer Configuration
+  #
+  # Default Kafka producer behaviour.
+  # ---------------------------------------------------------------------------
+  KAFKA_ACKS: "all"
+
+  KAFKA_RETRIES: "3"

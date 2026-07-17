@@ -1,0 +1,107 @@
+# =============================================================================
+# Kubernetes Secret Manifest
+# =============================================================================
+# File        : secret.yaml
+# Project     : MSIMPL - Microservices Platform
+# Environment : Development (Dev)
+# Service     : ms-transaction-orchestrator
+# Resource    : Secret (Opaque)
+#
+# Purpose
+# -----------------------------------------------------------------------------
+# Stores environment-specific sensitive configuration for the Transaction
+# Orchestrator microservice used in the Development environment.
+#
+# Description
+# -----------------------------------------------------------------------------
+# This Secret contains confidential configuration consumed exclusively by the
+# Transaction Orchestrator microservice.
+#
+# Typical examples include:
+#
+#   • Database Username
+#   • Database Password
+#   • API Keys
+#   • Authentication Tokens
+#   • Encryption Keys
+#   • Third-party Credentials
+#
+# The Secret is referenced by the Deployment using:
+#
+#     envFrom:
+#       secretRef:
+#         name: ms-transaction-secret
+#
+# GitOps Notes
+# -----------------------------------------------------------------------------
+# • This Secret is specific to the Development environment.
+# • It is dedicated to the Transaction Orchestrator microservice and should
+#   not be shared with other services.
+# • Development credentials are intentionally stored here for local Kubernetes
+#   deployments.
+# • QA, UAT and Production must use environment-specific credentials.
+# • Production deployments should use an external Secret management solution
+#   such as AWS Secrets Manager, HashiCorp Vault, or External Secrets Operator.
+#
+# Security Notes
+# -----------------------------------------------------------------------------
+# • stringData is automatically converted into Base64-encoded data by
+#   Kubernetes during resource creation.
+# • Base64 encoding is NOT encryption.
+# • Restrict RBAC permissions so only authorized workloads and users can
+#   access this Secret.
+#
+# Compatible With
+# -----------------------------------------------------------------------------
+# - Docker Desktop Kubernetes
+# - Kind
+# - Amazon EKS
+# - GitHub Actions
+# - Argo CD
+#
+# Version     : 2.0.0 (LOCKED)
+# Author      : Sanjeev Kumar
+# =============================================================================
+
+apiVersion: v1
+kind: Secret
+
+metadata:
+
+  # ---------------------------------------------------------------------------
+  # Secret name referenced by the Deployment.
+  # ---------------------------------------------------------------------------
+  name: ms-transaction-secret
+
+  labels:
+
+    app.kubernetes.io/name: ms-transaction-orchestrator
+    app.kubernetes.io/component: application-secret
+    app.kubernetes.io/part-of: msimpl-platform
+    app.kubernetes.io/managed-by: argocd
+
+# -----------------------------------------------------------------------------
+# Secret Type
+#
+# Opaque is the default Secret type for user-defined key/value pairs.
+# -----------------------------------------------------------------------------
+type: Opaque
+
+# -----------------------------------------------------------------------------
+# stringData
+#
+# Kubernetes automatically converts these values into the 'data' section
+# using Base64 encoding during resource creation.
+#
+# stringData is preferred because it is human-readable and easier to maintain.
+# -----------------------------------------------------------------------------
+stringData:
+
+  # ---------------------------------------------------------------------------
+  # Database Credentials
+  #
+  # Spring Boot reads these values as environment variables.
+  # ---------------------------------------------------------------------------
+  DB_USERNAME: "postgres"
+
+  DB_PASSWORD: "postgres"

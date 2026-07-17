@@ -1,0 +1,117 @@
+# =============================================================================
+# Kubernetes Service Manifest
+# =============================================================================
+# File        : service.yaml
+# Project     : MSIMPL - Microservices Platform
+# Service     : ms-wallet
+# Resource    : Service (ClusterIP)
+#
+# Purpose
+# -----------------------------------------------------------------------------
+# Defines the common Kubernetes Service for the Wallet microservice.
+#
+# This Service is environment-independent and is reused across the
+# Development, QA, UAT and Production environments.
+#
+# Environment-specific resources such as:
+#
+#   • Namespace
+#   • Ingress
+#
+# are supplied by the selected environment through its Kustomization.
+#
+#
+# Description
+# -----------------------------------------------------------------------------
+# This Service provides a stable internal network endpoint for the Wallet
+# microservice.
+#
+# Responsibilities
+# -----------------------------------------------------------------------------
+# • Load balances traffic across all healthy Wallet Pods.
+# • Provides stable DNS-based service discovery.
+# • Enables communication between Kubernetes microservices.
+# • Serves as the backend Service for the Wallet Ingress.
+#
+#
+# Service Discovery
+# -----------------------------------------------------------------------------
+# Kubernetes automatically creates a DNS entry for this Service.
+#
+# Within the same namespace, other microservices can communicate using:
+#
+#     http://ms-wallet:8080
+#
+# For cross-namespace communication:
+#
+#     ms-wallet.<namespace>.svc.cluster.local
+#
+#
+# GitOps Notes
+# -----------------------------------------------------------------------------
+# - This Service is shared across all environments.
+# - Argo CD deploys this Service together with the Wallet Deployment using
+#   the environment-specific Kustomization.
+# - Never modify this Service directly inside the Kubernetes cluster.
+#   All changes must originate from Git.
+#
+#
+# Compatible With
+# -----------------------------------------------------------------------------
+# - Docker Desktop Kubernetes
+# - Kind
+# - Amazon EKS
+# - GitHub Actions
+# - Argo CD
+#
+#
+# Version     : 3.0.0 (LOCKED)
+# Author      : Sanjeev Kumar
+# =============================================================================
+
+apiVersion: v1
+kind: Service
+
+metadata:
+
+  name: ms-wallet
+
+  labels:
+    app.kubernetes.io/name: ms-wallet
+    app.kubernetes.io/component: application
+    app.kubernetes.io/part-of: msimpl-platform
+
+spec:
+
+  # ---------------------------------------------------------------------------
+  # Service Type
+  #
+  # ClusterIP exposes the application only inside the Kubernetes cluster.
+  #
+  # External traffic reaches this Service through the Wallet Ingress.
+  # ---------------------------------------------------------------------------
+  type: ClusterIP
+
+  # ---------------------------------------------------------------------------
+  # Pod Selector
+  #
+  # This selector MUST match the labels defined in deployment.yaml.
+  # ---------------------------------------------------------------------------
+  selector:
+    app.kubernetes.io/name: ms-wallet
+
+  ports:
+
+    # -------------------------------------------------------------------------
+    # Service Port Mapping
+    #
+    # port
+    #     Port exposed by the Kubernetes Service.
+    #
+    # targetPort
+    #     Container port exposed by the Wallet application.
+    # -------------------------------------------------------------------------
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
